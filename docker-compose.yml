@@ -23,8 +23,7 @@ services:
       - "2181:2181"
 
   producer:
-    build:
-      context: ./KafkaProducer
+    image: matanmeir1/kafkaproducer:latest  # Pull from Docker Hub
     container_name: kafka_producer
     ports:
       - "5010:5010"
@@ -35,8 +34,7 @@ services:
     command: python producer.py
 
   consumer:
-    build:
-      context: ./KafkaConsumer
+    image: matanmeir1/kafkaconsumer:latest  # Pull from Docker Hub
     container_name: kafka_consumer
     ports:
       - "5011:5011"
